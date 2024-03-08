@@ -6,6 +6,7 @@ This module defines the BaseModel class.
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     def __init__(self):
         self.id = str(uuid.uuid4())
@@ -35,6 +36,7 @@ class BaseModel:
         class_name = self.__class__.__name__
         return "{} ({}) {}".format(class_name, self.id, self.__dict__)
 
+
 if __name__ == "__main__":
     my_model = BaseModel()
     my_model.my_number = 89  # Added 'my_number' attribute
@@ -46,4 +48,4 @@ if __name__ == "__main__":
     print(my_model_json)
     print("JSON of my_model:")
     for key in my_model_json.keys():
-        print("\t{}: ({}) = {}".format(key, type(my_model_json[key]), my_model_json[key]))
+        print(f"\t{key}: ({type(my_model_json[key])}) = {my_model_json[key]}")
