@@ -35,17 +35,3 @@ class BaseModel:
         """
         class_name = self.__class__.__name__
         return "{} ({}) {}".format(class_name, self.id, self.__dict__)
-
-
-if __name__ == "__main__":
-    my_model = BaseModel()
-    my_model.my_number = 89  # Added 'my_number' attribute
-    my_model.name = "My First Model"  # Added 'name' attribute
-    my_model.save()
-    my_model_json = my_model.to_dict()
-    print(my_model)
-    print(my_model)
-    print(my_model_json)
-    print("JSON of my_model:")
-    for key in my_model_json.keys():
-        print(f"\t{key}: ({type(my_model_json[key])}) = {my_model_json[key]}")
